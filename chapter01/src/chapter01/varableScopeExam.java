@@ -3,7 +3,7 @@ package chapter01;
 public class varableScopeExam {
 
 	public static void main(String[] args) {
-	int v1=15;
+	int v1=9;
 	int v2;
 	if(v1>10) {
 		v2=v1 -10;

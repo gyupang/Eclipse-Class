@@ -15,8 +15,9 @@ public class Exam09 {
 		String[] oldStr = { "java", "html", "css" };
 		String[] newStr = new String[6];
 		System.arraycopy(oldStr, 0, newStr, 0, oldStr.length);
+//		자바 배열 복사하는 방법
 		for (int i = 0; i < newStr.length; i++) {
-		    System.out.print(newStr[i] + " ");
+			System.out.print(newStr[i] + " ");
 		}
 
 	}
