@@ -7,9 +7,10 @@ public class Exam03Car {
 	String model= "EV9";
 	String color="핑크블루";
 	int maxSpeed =400;
-	int Speed;
+	int speed;
 
-//void Speed();
-//Speed+=1;
+void nowSpeed() {
+	speed += 1;
+	}
 
 }
