@@ -25,8 +25,8 @@ public class Test051 {
 
 			if (selectNo == 1) {
 				System.out.println("학생수를 입력하세요");
-				int x = scanner.nextInt();
-				scores = new int[x];
+				studentNum = scanner.nextInt();
+				scores = new int[studentNum];
 				System.out.println("선택>  " + 1);
 				System.out.println("학생수> " + scores.length);
 			} else if (selectNo == 2) {
@@ -45,14 +45,12 @@ public class Test051 {
 				for (int i = 0; i < scores.length; i++) {
 					if (scores[i] > max) {
 						max = scores[i];
-						sum += scores[i];
-					}
-					;
-				}
-				;
+											};
+					sum += scores[i];
+				};
 				System.out.println("선택>  " + 4);
 				System.out.println("최고점수 : " + max);
-				System.out.println("평균점수 : " + avg / scores.length);
+				System.out.println("평균점수 : " + (double)sum / scores.length);
 			} else if (selectNo == 5) {
 				System.out.println("선택>  " + 5);
 				System.out.println("프로그램 종료");

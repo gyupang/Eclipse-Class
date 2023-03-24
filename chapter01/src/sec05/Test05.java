@@ -30,10 +30,10 @@ public class Test05 {
 		for(int i = 0; i < array3.length; i++) {
 			for(int j = 0; j < array3[i].length; j++) {
 				sum += array3[i][j];
+				total++;
 			};
-			total +=array3[i].length;
 		};
-		avg = sum/total;
+		avg = (double)sum/total;
 		
 		System.out.println("total : " + total);
 		System.out.println("sum : " + sum);
