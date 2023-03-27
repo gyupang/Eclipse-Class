@@ -1,4 +1,4 @@
-package sec06;
+package javaquiz;
 
 public class Test0323 {
 
