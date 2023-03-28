@@ -1,4 +1,4 @@
-package chapter10;
+package sec06.ch10;
 
 public class SingletonExam {
 
@@ -6,7 +6,7 @@ public class SingletonExam {
 //		Singleton obj = new Singleton();
 		Singleton obj1 = Singleton.getInstance();
 		Singleton obj2 = Singleton.getInstance();
-
+		
 		if(obj1==obj2) {
 			System.out.println("같은 singletone 객체");
 		}else {

@@ -1,4 +1,4 @@
-package chapter10;
+package sec06.ch10;
 
 public class Exam02Exam {
 
