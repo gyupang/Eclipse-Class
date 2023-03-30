@@ -7,7 +7,7 @@ public class Singleton {
 	}
 
 //외부에선 getInstance()만 사용가능
-	Singleton getInstance() {
+	static Singleton getInstance() {
 		return single;
 
 	}
