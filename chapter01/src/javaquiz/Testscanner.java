@@ -60,6 +60,8 @@ public class Testscanner {
 		{
 			System.out.println(array[j]);
 		}
+		scanner.close();
+		sc.close();
 	}
 
 }
