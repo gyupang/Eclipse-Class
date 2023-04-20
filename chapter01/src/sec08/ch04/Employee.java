@@ -1,26 +1,21 @@
 package sec08.ch04;
 
-public class Employee {
+public class Employee extends AbstractEmployee {
 //필드
-	private String name;
+//	private String name;
 	private String jobTitle;
 
 	// 생성자
 	public Employee(String name, String jobTitle) {
-		this.name = name;
+		super(name);
 		this.jobTitle = jobTitle;
 
 	}
 
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getJobTitle() {
 		return jobTitle;
 	}
+
 	public void setJobTitle(String jobTitle) {
 		this.jobTitle = jobTitle;
 	}
@@ -28,9 +23,14 @@ public class Employee {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(name);
-		sb.append("|");
+		sb.append(this.getName());
+		sb.append(" | ");
 		sb.append(jobTitle);
 		return sb.toString();
+	}
+
+	@Override
+	public void doWork() {
+		System.out.println("열심히 달립니다.");
 	}
 }

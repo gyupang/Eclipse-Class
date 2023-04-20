@@ -21,9 +21,9 @@ public class Manager extends Employee {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.getName());
-		sb.append("|");
+		sb.append(" | ");
 		sb.append(this.getJobTitle());
-		sb.append("|");
+		sb.append(" | ");
 		sb.append(managerJob);
 		
 		return sb.toString();
