@@ -81,7 +81,7 @@
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-9 mt-3 col-md-offset-1">
-                <input type="text" name="detailaddr" id="detialaddr"class="form-control" placeholder="상세주소" />
+                <input type="text" name="detailaddr" id="detailaddr"class="form-control" placeholder="상세주소" />
             </div>
          </div>   
       </div>
