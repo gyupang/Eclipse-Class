@@ -2,8 +2,8 @@ package sec08.ch02;
 
 public interface RemoteControl {
 	// 상수 static final
-	static int MAX_VOLUMN = 10;
-	static int MIN_VOLUMN = 0;
+	int MAX_VOLUME = 10;
+	int MIN_VOLUME = 0;
 
 	// public 추상 메소드
 	public void turnOn();
@@ -12,5 +12,5 @@ public interface RemoteControl {
 
 	void turnOff();
 
-	void setVolumn();
+	void setVolume(int volume);
 }

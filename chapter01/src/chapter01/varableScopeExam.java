@@ -3,12 +3,13 @@ package chapter01;
 public class varableScopeExam {
 
 	public static void main(String[] args) {
-	int v1=9;
+	int v1=11;
 	int v2;
 	if(v1>10) {
 		v2=v1 -10;
+		System.out.println(v2);
 	}
-	int v3 =v1+v2+5;
+//	int v3 =v1+v2+5;
 	}
 
 }

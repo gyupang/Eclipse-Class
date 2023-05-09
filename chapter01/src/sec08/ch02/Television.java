@@ -2,7 +2,7 @@ package sec08.ch02;
 
 public class Television implements RemoteControl {
 	// 필드
-	private int volumn;
+	private int volume;
 
 	@Override
 	public void turnOn() {
@@ -15,15 +15,15 @@ public class Television implements RemoteControl {
 	}
 
 	@Override
-	public void setVolume(int volumn) {
-		if (volumn > RemoteControl.MAX_VOLUMN) {
-	this.volumn = RemoteControl.MAX_VOLUMN;
-		} else if (volumn < RemoteControl.MAX_VOLUMN) {
-	this.volumn = RemoteControl.MIN_VOLUMN;
-}else {
-	this.volumn =volumn;
-}
-	System.out.println("현재 오디오 볼륨 : " + this.volumn);
+	public void setVolume(int volume) {
+		if (volume > RemoteControl.MAX_VOLUME) {
+			this.volume = RemoteControl.MAX_VOLUME;
+		} else if (volume < RemoteControl.MIN_VOLUME) {
+			this.volume = RemoteControl.MIN_VOLUME;
+		} else {
+			this.volume = volume;
+		}
+		System.out.println("현재 TV 볼륨 : " + this.volume);
 	}
 
 }

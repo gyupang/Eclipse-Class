@@ -1,6 +1,6 @@
 package sec06.ch07;
 
-import sec06.ch04.Car;
+import sec06.ch07.Exam01car;
 
 public class Exam01carExam {
 
