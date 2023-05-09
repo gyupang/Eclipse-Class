@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+
 <html lang="ko-kr">
 <head>
    <meta charset="UTF-8">
@@ -20,9 +22,19 @@
            </div>
            <div class="col-md-5 text-end">
              <nav class="top-nav">
-                <a href="?fname=member/login">로그인</a> |
-                <a href="?fname=member/register">회원가입</a> |
-                <a href="#">회원수정</a>
+                <c:choose>
+                  <c:when test="${sessionScope.level == 0 || empty sessionScope.level}">  
+                    <a href="/board/index.jsp?fname=member/login">로그인</a> |
+                    <a href="/board/index.jsp?fname=member/register">회원가입</a> |
+                  </c:when>
+                  <c:otherwise>
+                   <a href="/board/LogOut">로그아웃</a> |
+                   <a href="/board/index.jsp?fname=member/edtregister">회원수정</a>
+                  </c:otherwise>
+                </c:choose>
+                <c:if test="${sessionScope.level == 99 }">
+                   <a href="/board/index.jsp?fname=member/edtregister">회원관리</a>
+                </c:if>
              </nav>
            </div>
        </div>
