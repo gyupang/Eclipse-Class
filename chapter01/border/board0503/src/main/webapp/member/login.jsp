@@ -1,9 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
-    
+<%! String message = null; %>    
+<%
+    message = (String) request.getAttribute("message");
+    if(message != null){
+%>
+    <script>
+       alert("<%=message%>");
+    </script>
+<%
+    }
+%>
 <h1 class="my-5 text-center">MY BBS 로그인</h1>    
 <div class="cotainer mb-5">    
-   <form name="loginform" class="loginform" action="" method="post">
+   <form name="loginform" class="loginform" action="/board/memberlogin" method="post">
       <div class="mb-3 mt-3">
          <div class="row">
             <label for="userid" class="col-md-3 form-label">아이디 :</label>
@@ -24,7 +34,7 @@
       <div class="mb-3 mt-3">
           <div class="row">
               <div class="offset-md-8 col-md-4 text-end">
-                  <label><input type="checkbox" name="huid" value="ok"> 아이디 기억</label>
+                  <label><input type="checkbox" name="huid" value="ok" onclick="isChecked();"> 아이디 기억</label>
               </div>
           </div>
       </div>
@@ -43,13 +53,13 @@
       	<div class="row">
       		<div class="offset-md-5 col-md-7 text-end">
       		   <a href="?fname=member/register" class="me-3">회원가입</a>
-      		   <a href="#">아이디/패스워드 찾기</a>
+      		   <a href="javascript:void(0)" onclick="findIdPw();">아이디/패스워드 찾기</a>
       		</div>
       	</div>
       </div>
     </form>
  </div>     
- <div class="container wh600">
+ <div class="container wh600 mb-5 pb-5">
       <div class="row">
           <div class="col-md-6">
               <div class="d-grid">
@@ -63,3 +73,6 @@
           </div>
       </div>
  </div>
+ <script src="js/cookie.js"></script>
+ <script src="js/form.js"></script>
+ 
