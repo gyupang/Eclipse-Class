@@ -107,3 +107,7 @@ a.kakao-btn{
 	color:#000;
 	font-weight:600;
 }
+/**** 회원목록 ***/
+.memberstbl,.lmember{
+	margin-bottom:40px;
+}

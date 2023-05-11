@@ -40,11 +40,11 @@ public class MemUpdate extends HttpServlet {
 		String script = null;
 		if(isSuccess) {
 		    script = "<script>alert('수정했습니다.');"
-				       +"document.location.href='/boardmake';"
+				       +"document.location.href='/board';"
 				       +"</script>";
 		}else {
 		    script = "<script>alert('문제가 발생했습니다. \n 관리자에게 문의해봤자 관리자가 뭘알겠습니까.');"
-				       +"document.location.href='/boardmake';"
+				       +"document.location.href='/board';"
 				       +"</script>";			
 		}
 		out.println("<html><head></head><body>");
