@@ -57,4 +57,14 @@
     <servlet-name>FindIdPw</servlet-name>
     <url-pattern>/FindIdPw</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LevelUpdate</display-name>
+    <servlet-name>LevelUpdate</servlet-name>
+    <servlet-class>musecom.net.LevelUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LevelUpdate</servlet-name>
+    <url-pattern>/LevelUpdate</url-pattern>
+  </servlet-mapping>
 </web-app>

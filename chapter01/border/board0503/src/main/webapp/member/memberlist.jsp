@@ -22,12 +22,22 @@
    Vector data = mem.getSelect(limitNum, listNum);
    int maxColumn = mem.getAllSelect();
    int size = data.size();  
+ 
+   /*
+      1. 전체페이지 수  2. 전체블록수  3. 현재 블록번호 4. 블록당 시작번호 5. 블록당 마지막 번호
+   */
+   int totalPage = (int) Math.ceil(maxColumn / (double) listNum);
+   int totalBlock = (int) Math.ceil(totalPage / (double) pageNum);
+   int nowBlock = (int) Math.ceil(mypg / (double)pageNum);
+   int startNum = (nowBlock - 1)*pageNum + 1;
+   int endNum = nowBlock * pageNum;
+   if(endNum > totalPage) endNum = totalPage;
 %> 
 
 <div class="container lmember">
    <h2 class="mt-3 mb-5 text-center">회원목록 (관리자 전용)</h2>
    <div class="text-end">
-       총 회원 : <%=maxColumn %>명.
+       총 회원 : <%=maxColumn %>명/<%=totalPage%>페이지.
    </div>
    <div class="row">
       <table class="table table-striped memberstbl">
@@ -65,8 +75,14 @@
           <td><%=wdate %></td>
           <td>
             <%
-              String selected1="", selected2="", selected3="", selected4="", selected5="";
-              switch(level){
+           if(level == 99) { 
+           %> 
+        	 <span class="badge bg-danger px-4 py-2">관리자</span> 
+           <%
+           }else{	  
+        	   
+           String selected1="", selected2="", selected3="", selected4="";              
+            switch(level){
                 case 0:
             	  selected1 = "selected";
                 break;
@@ -79,28 +95,56 @@
                 case 3:
             	  selected4 = "selected";
                 break;
-                case 99:
-            	  selected5 = "selected";
-                break;      
-
               }
+
             %>
-            <select name="level" class="level">
+            
+            <select name="level" class="level" onChange="memLevel(this, <%=level%>, <%=num%>);">
                <option value="0" <%=selected1 %>>탈퇴회원</option>
                <option value="1" <%=selected2 %>>일반회원</option>
                <option value="2" <%=selected3 %>>유료회원</option>
                <option value="3" <%=selected4 %>>VIP회원</option>
-               <option value="99" <%=selected5 %>>관리자</option>
             </select>    
           </td>
        </tr>
 <%
-       }
+         }
+       }       
 %>
          </tbody>
       
       </table>   
         
+   </div><!--  /.row -->
+   <div class="mt-3 mb-5 row ">
+       <ul class="pagination justify-content-center mb-5">
+          <%
+             //이전 페이지
+             if(startNum > 1){
+            	 int prevPage = startNum -1;
+            	 out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"?fname=member/memberlist&page="+prevPage+"\">이전</a></li>");
+             }else{
+            	 out.print("<li class=\"page-item\"><a class=\"page-link text-muted\" href=\"javascript:void(0)\">이전</a></li>");
+             }
+           
+             //페이지 출력
+             for(int i = startNum; i<= endNum; i++) {
+            	 String act="";
+            	 if(mypg == i) act = "active";
+          %>
+             <li class="page-item <%=act %>"><a class="page-link" href="?fname=member/memberlist&page=<%=i %>"><%=i %></a></li>
+          <%
+             }
+             
+             //다음 페이지
+             if(endNum < totalPage) {
+            	 int nextPage=endNum + 1;
+            	 out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"?fname=member/memberlist&page="+nextPage+"\">다음</a></li>");
+             }else{
+            	 out.print("<li class=\"page-item\"><a class=\"page-link text-muted\" href=\"javascript:void(0)\">다음</a></li>");
+             }
+          %>
+       </ul>
    </div>
 </div> 
 
